@@ -1,0 +1,69 @@
+[
+  {
+    "id": "Project 1",
+    "url": "https://github.com/opoberezh/goit-markup-hw-07",
+    "src": "/next-project/assets/webStudio.png",
+    "alt": "Photo studio",
+    "title": "“WebStudio” ",
+    "type": "Individual project",
+    "skills": "HTML, CSS, JS",
+    "description": " The WebStudio website is a fully responsive and visually appealing platform designed to showcase the services of a professional photo studio",
+    "role": "Role: developer"
+  },
+  {
+    "id": "Project 2",
+    "url": "https://github.com/KatanES/Simply-Chocolate",
+    "src": "/next-project/assets/chocolate.png",
+    "alt": "Craft chocolate web site",
+    "title": "“Simply Chocolate”",
+    "skills": "HTML, CSS, JS",
+    "type": "Team project",
+    "description": " The Simply Chocolate website is a digital representation of a craft chocolate brand. It offers a responsive layout that adapts to various screen sizes",
+    "role": "Role: developer (Footer)"
+  },
+  {
+    "id": "Project 3",
+    "url": "https://github.com/opoberezh/goit-react-hw-05-movies",
+    "src": "/next-project/assets/movies.png",
+    "alt": "Searching movies app",
+    "title": "“Movies App”",
+    "skills": "HTML, Styled Components, JS, Handlebars, REST API, AXIOS, Create React Ap",
+    "type": "Individual project",
+    "description": " The Movies App helps users to search and discover movies. It allows users to explore movie details.",
+    "role": "Role: developer"
+  },
+  {
+    "id": "Project 4",
+    "url": "https://github.com/opoberezh/rental-car-project",
+    "src": "/next-project/assets/desctop.png",
+    "alt": "Searching a car for rent app",
+    "title": "“carFORrent App”",
+    "skills": "HTML, Styled Components, JS, Handlebars, REST API, AXIOS, Create React App, Redux",
+    "type": "Individual project",
+    "description": " The carFORrent App is an individual project designed for  searching and rent cars easily",
+    "role": "Role: developer"
+  },
+  
+  {
+    "id": "Project 5",
+    "url": "https://github.com/opoberezh/events-project",
+    "src": "/next-project/assets/event.png",
+    "alt": "Searching event app",
+    "title": "“Event Academy App”",
+    "skills": "REST API, AXIOS, View, Vite.js, React, Redux, Sorting, Modals, Registration",
+    "type": "Individual project",
+    "description": " The Event Academy App is a platform that allows users to register for various events ",
+    "role": "Role: developer"
+  },
+  {
+    "id": "Project 6",
+    "url": "https://github.com/Sokilskill/project-daily-energy-dose/tree/main",
+    "src": "/next-project/assets/en.png",
+    "alt": "WorkOut App",
+    "title": "“Power Pulse App”",
+    "skills": "Client, Server,  Vite.js,  Registration, Charts",
+    "type": "Team project",
+    "description": " The Power Pulse App is a fitness and workout application designed to help users track their progress and performance",
+    "role": "Role: front-end (Profile Page)"
+  }
+]
