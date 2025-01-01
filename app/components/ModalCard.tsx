@@ -15,11 +15,13 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   maxWidth: 600,
+  maxHeight: "90vh",
   outline: "none",
   bgcolor: theme.palette.background.paper,
   border: "3px solid #00ffcc",
   borderRadius: 12,
   p: 4,
+  overflowY: "auto",
 };
 
 interface ModalCardProps {
