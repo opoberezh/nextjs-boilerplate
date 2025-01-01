@@ -43,8 +43,8 @@ export default function Home() {
         <Image className="responsiveImage"
           src="/assets/innovation.png"
           alt="Innovating image"
-          width={592}
-          height={592}
+          width={450}
+          height={450}
           priority={true}
           
         />

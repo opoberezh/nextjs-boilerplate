@@ -38,8 +38,8 @@ function About() {
           <Image
             src="/assets/pana.png"
             alt="Woman is typing on a laptop"
-            width={592}
-            height={592}
+            width={450}
+            height={450}
             priority={true}
             className="responsiveImage"
           />

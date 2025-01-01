@@ -23,6 +23,7 @@ const StyledProjectCard = styled(Paper)(() => ({
   position: "relative",
   overflow: "hidden",
   "&:hover": {
+    border: "none",
     transform: "scale(1.05)",
     boxShadow: "0 6px 12px rgba(0, 255, 204, 0.5)",
   },
@@ -90,8 +91,8 @@ function Projects() {
           <Image
             src="/assets/bro.png"
             alt="Astronaut explores object"
-            width={592}
-            height={592}
+            width={450}
+            height={450}
             priority={true}
             className="responsiveImage"
           />
