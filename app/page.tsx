@@ -6,6 +6,7 @@ import BasicButton from "./components/BasicButton";
 import { useState } from "react";
 import ModalForm from "./components/ModalForm";
 import { Box, Container, Typography } from "@mui/material";
+// import ChatGame from "./components/ChatGame";
 
 
 export default function Home() {
@@ -92,11 +93,12 @@ export default function Home() {
       }}>
                 <BasicButton text="Write Letter" onClick={handleOpen} />
           </Box>
-        </Box>  
+        </Box> 
+         {/* <ChatGame/>  */}
         </Container>
         {isOpen && <ModalForm open={isOpen} onClose={handleClose} />}
         
-    
+   
     </Box>
   );
 }

@@ -2,7 +2,7 @@
   {
     "id": "Project 1",
     "url": "https://github.com/opoberezh/goit-markup-hw-07",
-    "src": "/next-project/assets/webStudio.png",
+    "src": "/assets/webStudio.png",
     "alt": "Photo studio",
     "title": "“WebStudio” ",
     "type": "Individual project",
@@ -13,7 +13,7 @@
   {
     "id": "Project 2",
     "url": "https://github.com/KatanES/Simply-Chocolate",
-    "src": "/next-project/assets/chocolate.png",
+    "src": "/assets/chocolate.png",
     "alt": "Craft chocolate web site",
     "title": "“Simply Chocolate”",
     "skills": "HTML, CSS, JS",
@@ -24,7 +24,7 @@
   {
     "id": "Project 3",
     "url": "https://github.com/opoberezh/goit-react-hw-05-movies",
-    "src": "/next-project/assets/movies.png",
+    "src": "/assets/movies.png",
     "alt": "Searching movies app",
     "title": "“Movies App”",
     "skills": "HTML, Styled Components, JS, Handlebars, REST API, AXIOS, Create React Ap",
@@ -35,7 +35,7 @@
   {
     "id": "Project 4",
     "url": "https://github.com/opoberezh/rental-car-project",
-    "src": "/next-project/assets/desctop.png",
+    "src": "/assets/desctop.png",
     "alt": "Searching a car for rent app",
     "title": "“carFORrent App”",
     "skills": "HTML, Styled Components, JS, Handlebars, REST API, AXIOS, Create React App, Redux",
@@ -47,7 +47,7 @@
   {
     "id": "Project 5",
     "url": "https://github.com/opoberezh/events-project",
-    "src": "/next-project/assets/event.png",
+    "src": "/assets/event.png",
     "alt": "Searching event app",
     "title": "“Event Academy App”",
     "skills": "REST API, AXIOS, View, Vite.js, React, Redux, Sorting, Modals, Registration",
@@ -58,7 +58,7 @@
   {
     "id": "Project 6",
     "url": "https://github.com/Sokilskill/project-daily-energy-dose/tree/main",
-    "src": "/next-project/assets/en.png",
+    "src": "/assets/en.png",
     "alt": "WorkOut App",
     "title": "“Power Pulse App”",
     "skills": "Client, Server,  Vite.js,  Registration, Charts",

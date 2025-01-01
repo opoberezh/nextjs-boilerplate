@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Pagination, Stack, Typography, Paper, Container } from "@mui/material";
+import { Box, Pagination, Stack, Typography, Paper, Container, useMediaQuery} from "@mui/material";
 import Grid from "@mui/material/Grid2"; 
 import { styled } from "@mui/system";
 import Image from "next/image";
@@ -16,8 +16,9 @@ const StyledProjectCard = styled(Paper)(() => ({
   textAlign: "center",
   width: "300px",
   height: "300px",
-  borderRadius: theme.shape.borderRadius,
-  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+  border: "3px solid #00ffcc",
+  borderRadius: 12,
+  boxShadow: "0 6px 10px rgba(0, 0, 0, 0.2) ",
   transition: "transform 0.3s, box-shadow 0.3s",
   position: "relative",
   overflow: "hidden",
@@ -46,8 +47,9 @@ const ProjectImage = styled(Box)({
 });
 
 function Projects() {
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const [page, setPage] = useState(1);
-  const projectsPerPage = 2;
+  const projectsPerPage = isDesktop ? 1 : 2;
 
   const indexOfLastProject = page * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
@@ -96,10 +98,9 @@ function Projects() {
         </Box>
         <Box
           sx={{
-            
             textAlign: { xs: "center", md: "left" },
             minWidth: "300px",
-            maxWidth: "1200px",
+            maxWidth: "400px",
           }}
         >
           <Typography
@@ -112,6 +113,15 @@ function Projects() {
             }}
           >
             Projects
+          </Typography>
+          <Typography variant="h4"
+          component="p"
+          sx={{
+            mb: 3,
+           
+           
+          }}>
+           Explore my latest projects below. Click on a project to view the code with visiting my GitHub page for more details and additional work
           </Typography>
 <Box 
 >
