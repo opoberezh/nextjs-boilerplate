@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import theme from "../theme";
@@ -10,13 +8,21 @@ interface ClockProps {
 }
 
 function Clock({ label, timeZone }: ClockProps) {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState<Date | null>(null);  // Set initial state to null
 
+  // Only start the time effect after the component has mounted
   useEffect(() => {
+    setTime(new Date());  // Initialize the time once the component is mounted
+
     const interval = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(interval);
   }, []);
-  
+
+  // If time is not set yet (on initial render), return a placeholder
+  if (!time) {
+    return <Box sx={{ width: 100, height: 100, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</Box>;
+  }
+
   const getRotation = (unit: "hours" | "minutes" | "seconds") => {
     const utc = time.toLocaleString("en-US", { timeZone: "UTC" });
     const currentTime = new Date(utc).toLocaleString("en-US", {
