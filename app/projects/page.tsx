@@ -84,7 +84,7 @@ function Projects() {
           sx={{
             backgroundColor: "rgba(227, 228, 229, 0.5)",
             borderRadius: "50%",
-            boxShadow: "0 0 30px #00ffcc",
+            boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)",
             maxWidth: "592px",
           }}
         >

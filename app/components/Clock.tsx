@@ -56,7 +56,11 @@ function Clock({ label, timeZone }: ClockProps) {
         width: 100,
         height: 100,
         position: "relative",
-        boxShadow: "0 0 6px rgba(0, 255, 204, 0.5)",
+        boxShadow: `
+      0px 0px 6px rgba(0, 179, 179, 0.1), 
+      0px 0px 3px rgba(0, 255, 204, 0.08), 
+      0px 0px 16px rgba(0, 255, 204, 0.12), 
+      0px 16px 24px rgba(0, 255, 204, 0.1)`,
         backgroundColor: "background.paper",
         border: "2px solid rgba(0, 0, 0, 0.1)",
       }}

@@ -34,7 +34,8 @@ function About() {
        
       }}
       >
-        <Box sx={{ backgroundColor: "rgba(227, 228, 229, 0.5)", borderRadius: "50%", boxShadow: "0 0 30px #00ffcc", maxWidth: "592px" }}>
+        <Box sx={{ backgroundColor: "rgba(227, 228, 229, 0.5)", borderRadius: "50%", 
+          boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)", maxWidth: "592px" }}>
           <Image
             src="/assets/pana.png"
             alt="Woman is typing on a laptop"
@@ -47,6 +48,9 @@ function About() {
 
         <Box 
         sx={{
+          display: "flex",
+          flexDirection: "column",
+            gap: "24px",
             textAlign: { xs: "center", md: "left" },
             minWidth: "300px",
             maxWidth: "400px",
@@ -56,18 +60,14 @@ function About() {
           component="h1"
           sx={{
             fontWeight: "bold",
-            mb: 1,
+           
             color: "text.primary",
           }}
           >Once upon a story</Typography>
           <Typography 
           variant="h4"
           component="p"
-          sx={{
-            mb: 3,
-           
-           
-          }}>
+         >
             As a junior front-end developer, I am excited to begin my career in
             the IT field, ready to apply my skills and continue learning
           </Typography>

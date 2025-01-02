@@ -39,7 +39,8 @@ export default function Home() {
          
         }}
       >
-          <Box sx={{ backgroundColor: "rgba(227, 228, 229, 0.5)", borderRadius: "50%" ,maxWidth:"592px", boxShadow: "0 0 30px #00ffcc"}}>
+          <Box sx={{ backgroundColor: "rgba(227, 228, 229, 0.5)", borderRadius: "50%" ,maxWidth:"592px", 
+           boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)"}}>
         <Image className="responsiveImage"
           src="/assets/innovation.png"
           alt="Innovating image"
@@ -51,6 +52,9 @@ export default function Home() {
         </Box>
         <Box
           sx={{
+            display: "flex",
+            flexDirection: "column",
+              gap: "24px",
             textAlign: { xs: "center", md: "left" },
           }}
         >
@@ -60,7 +64,7 @@ export default function Home() {
             component="h1"
             sx={{
               fontWeight: "bold",
-              mb: 1,
+             
               color: "text.primary",
             }}
           >
@@ -69,10 +73,7 @@ export default function Home() {
           <Typography
             variant="h4"
             component="p"
-            sx={{
-              mb: 1,
-              
-            }}
+            
           >
             Olha Poberezhna
           </Typography>
