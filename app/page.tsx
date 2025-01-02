@@ -6,8 +6,8 @@ import BasicButton from "./components/BasicButton";
 import { useState } from "react";
 import ModalForm from "./components/ModalForm";
 import { Box, Container, Typography } from "@mui/material";
-// import ChatGame from "./components/ChatGame";
 
+import WorldClocks from "./components/Watches";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +54,7 @@ export default function Home() {
             textAlign: { xs: "center", md: "left" },
           }}
         >
+          
           <Typography
             variant="h2"
             component="h1"
@@ -69,24 +70,17 @@ export default function Home() {
             variant="h4"
             component="p"
             sx={{
-              mb: 3,
+              mb: 1,
               
             }}
           >
             Olha Poberezhna
           </Typography>
+          <WorldClocks/>
+     
           <Box sx={{
         display: "flex",
-        
-        alignItems: "center",
-        justifyContent: "center",
-        
-      }}>
-
-          </Box>
-          <Box sx={{
-        display: "flex",
-        
+       
         alignItems: "center",
         justifyContent: {xs:"center", md:"flex-start"}
         
@@ -94,7 +88,7 @@ export default function Home() {
                 <BasicButton text="Write Letter" onClick={handleOpen} />
           </Box>
         </Box> 
-         {/* <ChatGame/>  */}
+        
         </Container>
         {isOpen && <ModalForm open={isOpen} onClose={handleClose} />}
         
