@@ -8,39 +8,40 @@ interface ClockProps {
 }
 
 function Clock({ label, timeZone }: ClockProps) {
-  const [time, setTime] = useState<Date | null>(null);  // Set initial state to null
+  const [rotations, setRotations] = useState({
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
-  // Only start the time effect after the component has mounted
   useEffect(() => {
-    setTime(new Date());  // Initialize the time once the component is mounted
+    const calculateRotations = () => {
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone,
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: false,
+      });
 
-    const interval = setInterval(() => setTime(new Date()), 1000);
+      const now = new Date();
+      const parts = formatter.formatToParts(now);
+      const hours = Number(parts.find((part) => part.type === "hour")?.value || 0);
+      const minutes = Number(parts.find((part) => part.type === "minute")?.value || 0);
+      const seconds = Number(parts.find((part) => part.type === "second")?.value || 0);
+
+      setRotations({
+        hours: (hours % 12) * 30 + minutes * 0.5,
+        minutes: minutes * 6,
+        seconds: seconds * 6,
+      });
+    };
+
+    calculateRotations(); // Встановлюємо початкові значення
+    const interval = setInterval(calculateRotations, 1000); // Оновлюємо щосекунди
+
     return () => clearInterval(interval);
-  }, []);
-
-  // If time is not set yet (on initial render), return a placeholder
-  if (!time) {
-    return <Box sx={{ width: 100, height: 100, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</Box>;
-  }
-
-  const getRotation = (unit: "hours" | "minutes" | "seconds") => {
-    const utc = time.toLocaleString("en-US", { timeZone: "UTC" });
-    const currentTime = new Date(utc).toLocaleString("en-US", {
-      timeZone,
-    });
-    const current = new Date(currentTime);
-
-    switch (unit) {
-      case "hours":
-        return (current.getHours() % 12) * 30 + current.getMinutes() * 0.5;
-      case "minutes":
-        return current.getMinutes() * 6;
-      case "seconds":
-        return current.getSeconds() * 6;
-      default:
-        return 0;
-    }
-  };
+  }, [timeZone]);
 
   const clockNumbers = Array.from({ length: 12 }, (_, i) => i + 1);
 
@@ -56,11 +57,11 @@ function Clock({ label, timeZone }: ClockProps) {
         width: 100,
         height: 100,
         position: "relative",
-        boxShadow: `
-      0px 0px 6px rgba(0, 179, 179, 0.1), 
-      0px 0px 3px rgba(0, 255, 204, 0.08), 
-      0px 0px 16px rgba(0, 255, 204, 0.12), 
-      0px 16px 24px rgba(0, 255, 204, 0.1)`,
+        boxShadow: 
+          `0px 0px 6px rgba(0, 179, 179, 0.1), 
+           0px 0px 3px rgba(0, 255, 204, 0.08), 
+           0px 0px 16px rgba(0, 255, 204, 0.12), 
+           0px 16px 24px rgba(0, 255, 204, 0.1)`,
         backgroundColor: "background.paper",
         border: "2px solid rgba(0, 0, 0, 0.1)",
       }}
@@ -105,7 +106,7 @@ function Clock({ label, timeZone }: ClockProps) {
             top: "15%",
             left: "50%",
             transformOrigin: "bottom",
-            transform: `rotate(${getRotation("hours")}deg)`,
+            transform: `rotate(${rotations.hours}deg)`,
             transition: "transform 0.5s linear",
             zIndex: 2,
           }}
@@ -120,7 +121,7 @@ function Clock({ label, timeZone }: ClockProps) {
             top: "5%",
             left: "50%",
             transformOrigin: "bottom",
-            transform: `rotate(${getRotation("minutes")}deg)`,
+            transform: `rotate(${rotations.minutes}deg)`,
             transition: "transform 0.5s linear",
             zIndex: 2,
           }}
@@ -135,7 +136,7 @@ function Clock({ label, timeZone }: ClockProps) {
             top: "0%",
             left: "50%",
             transformOrigin: "bottom",
-            transform: `rotate(${getRotation("seconds")}deg)`,
+            transform: `rotate(${rotations.seconds}deg)`,
             transition: "transform 0.5s linear",
             zIndex: 2,
           }}
