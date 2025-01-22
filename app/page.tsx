@@ -24,7 +24,7 @@ export default function Home() {
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      maxHeight: "100vh",
+      
       bgcolor: "background.default",
       p: 3,
     }}>
