@@ -37,8 +37,8 @@ function Clock({ label, timeZone }: ClockProps) {
       });
     };
 
-    calculateRotations(); // Встановлюємо початкові значення
-    const interval = setInterval(calculateRotations, 1000); // Оновлюємо щосекунди
+    calculateRotations(); 
+    const interval = setInterval(calculateRotations, 1000); 
 
     return () => clearInterval(interval);
   }, [timeZone]);

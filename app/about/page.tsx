@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import BasicButton from "../components/BasicButton";
 import ModalCard from "../components/ModalCard";
 import { Box, Container, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
+import GaugeComposition from "../components/GaugeComposition";
 
 function About() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +23,7 @@ function About() {
       justifyContent: "center",
      
       bgcolor: "background.default",
-      p: 3,
+      p: { xs: 2, sm: 4 },
     }}
     >
       <Container
@@ -35,7 +37,7 @@ function About() {
       }}
       >
         <Box sx={{ backgroundColor: "rgba(227, 228, 229, 0.5)", borderRadius: "50%", 
-          boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)", maxWidth: "592px" }}>
+          boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)", maxWidth: "450px" }}>
           <Image
             src="/assets/pana.png"
             alt="Woman is typing on a laptop"
@@ -71,6 +73,15 @@ function About() {
             As a junior front-end developer, I am excited to begin my career in
             the IT field, ready to apply my skills and continue learning
           </Typography>
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            spacing={{ xs: 1, md: 3 }}
+            sx={{  alignItems: 'center' }}
+          >
+            <GaugeComposition value={45} label="React" />
+            <GaugeComposition value={20} label="TypeScript" />
+            <GaugeComposition value={50} label="JavaScript" />
+          </Stack>
           <Box sx={{
         display: "flex",
         

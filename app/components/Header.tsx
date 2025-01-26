@@ -7,7 +7,7 @@ const navTabs = [
   { label: 'Home', value: '/' },
   { label: 'About', value: '/about' },
   { label: 'Projects', value: '/projects' },
-  { label: 'Contacts', value: '/contacts' },
+  
 ];
 
 function Header() {

@@ -18,6 +18,7 @@ const WorldClocks = () => {
        mb:4,
         p: 2,
         textAlign: "center",
+        
       }}
     >
       
@@ -29,7 +30,6 @@ const WorldClocks = () => {
             sm:6,
             md:4,
             lg:2.4
-
           }} >
             <Clock label={label} timeZone={timeZone} />
           </Grid>

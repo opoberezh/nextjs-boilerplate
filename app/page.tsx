@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import Image from "next/image";
-
+import { GitHub, LinkedIn, Telegram } from "@mui/icons-material";
 import BasicButton from "./components/BasicButton";
 import { useState } from "react";
 import ModalForm from "./components/ModalForm";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, Chip } from "@mui/material";
 
 import WorldClocks from "./components/Watches";
 
@@ -15,85 +15,145 @@ export default function Home() {
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
 
-
-
   return (
-    <Box  component="main" 
-    sx={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      
-      bgcolor: "background.default",
-      p: 3,
-    }}>
-      
+    <Box
+      component="main"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+
+        bgcolor: "background.default",
+        p: 3,
+      }}
+    >
       <Container
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "center",
-          gap:{xs: 4, md: 10},
-         
+          gap: { xs: 4, md: 10 },
         }}
       >
-          <Box sx={{ backgroundColor: "rgba(227, 228, 229, 0.5)", borderRadius: "50%" ,maxWidth:"592px", 
-           boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)"}}>
-        <Image className="responsiveImage"
-          src="/assets/innovation.png"
-          alt="Innovating image"
-          width={450}
-          height={450}
-          priority={true}
-          
-        />
+        <Box
+          sx={{
+            backgroundColor: "rgba(227, 228, 229, 0.5)",
+            borderRadius: "50%",
+            maxWidth: "450px",
+            boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)",
+          }}
+        >
+          <Image
+            className="responsiveImage"
+            src="/assets/innovation.png"
+            alt="Innovating image"
+            width={450}
+            height={450}
+            priority={true}
+          />
         </Box>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-              gap: "24px",
+            gap: "12px",
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          
           <Typography
             variant="h2"
             component="h1"
             sx={{
               fontWeight: "bold",
-             
+
               color: "text.primary",
             }}
           >
             Front-end Developer
           </Typography>
-          <Typography
-            variant="h4"
-            component="p"
-            
-          >
+          <Typography variant="h3" component="p" >
             Olha Poberezhna
           </Typography>
-          <WorldClocks/>
-     
-          <Box sx={{
-        display: "flex",
-       
-        alignItems: "center",
-        justifyContent: {xs:"center", md:"flex-start"}
-        
-      }}>
-                <BasicButton text="Write Letter" onClick={handleOpen} />
+          <Typography variant="h4">
+            Passionate about building interactive and user-friendly web
+            applications.
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: { xs: "center", md: "flex-start" },
+              gap: 2,
+              flexWrap: "wrap",
+              
+            }}
+          >
+            {["React", "TypeScript", "JavaScript", "HTML5", "CSS3"].map(
+              (skill) => (
+                <Chip
+                  key={skill}
+                  label={skill}
+                  variant="outlined"
+                  color="primary"
+                />
+              )
+            )}
+
+
           </Box>
-        </Box> 
-        
-        </Container>
-        {isOpen && <ModalForm open={isOpen} onClose={handleClose} />}
-        
-   
+<Box sx={{
+              display: "flex",
+              justifyContent: { xs: "center", md: "flex-start" },}}>
+<WorldClocks />
+</Box>
+           
+          <Typography variant="h6" sx={{ textAlign: { xs: "center", md: "left" }, mt: 3 }}>
+            Interested in collaborating? Drop me a message!
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+             
+              justifyContent: { xs: "center", md: "flex-start" },
+            }}
+          >
+            <a
+              href="https://github.com/opoberezh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHub fontSize="large" sx={{ color: "text.primary" }} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/olha-poberezhna-b06279265/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedIn fontSize="large" sx={{ color: "text.primary" }} />
+            </a>
+            <a
+              href="https://t.me/Olha_poberezh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Telegram fontSize="large" sx={{ color: "text.primary" }} />
+            </a>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+
+              alignItems: "center",
+              justifyContent: { xs: "center", md: "flex-start" },
+            }}
+          >
+            <BasicButton text="Write Letter" onClick={handleOpen} />
+          </Box>
+        </Box>
+      </Container>
+      {isOpen && <ModalForm open={isOpen} onClose={handleClose} />}
     </Box>
   );
 }
