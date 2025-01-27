@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import icons from "../../icons.json";
 import Image from "next/image";
 import theme from "../theme";
+import { Divider } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -119,7 +120,47 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
           sx={{ mb: 3,  }}
         >
           Front-end Developer
+          
         </Typography>
+        <Typography
+  variant="h6"
+  align="justify"
+  sx={{ mb: 1 }}
+>
+I am 44 years old, a proud wife, and the mother of two wonderful children. 
+</Typography>
+<Divider sx={{ my: 1 }} />
+
+        {/* Personal Info */}
+        <Typography variant="h5" gutterBottom>
+          Passions 🌟
+        </Typography>
+        <Box sx={{ pl: 2, mb: 2 }}>
+          <Typography variant="h6" gutterBottom>
+            • Music and singing have always been my passion — once, I  dreamed of being a singer.
+          </Typography>
+          <Box sx={{  display: "flex", justifyContent: "center", mt: 1 }}>
+          <audio controls>
+  <source src="/LiftMeUp.mp3" type="audio/mp3" />
+  Your browser does not support the audio element.
+</audio>
+          </Box>
+          <Typography variant="h6" gutterBottom sx={{mt:1}}>
+            • I love animals, especially dogs.  I believe they make people better.😇 
+          </Typography>
+          <Typography variant="h6" gutterBottom>
+            • Photography and videography are my creative outlets. 📸
+          </Typography>
+        </Box>
+
+<Typography
+  variant="body1"
+  align="justify"
+  sx={{ mb: 1 }}
+>
+  
+   I love challenging myself by exploring new fields, setting goals, and achieving them.
+</Typography>
 
         {/* Expanded Section */}
         {isExpanded && (

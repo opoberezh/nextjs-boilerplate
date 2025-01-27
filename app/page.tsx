@@ -108,7 +108,7 @@ export default function Home() {
 <WorldClocks />
 </Box>
            
-          <Typography variant="h6" sx={{ textAlign: { xs: "center", md: "left" }, mt: 3 }}>
+          <Typography variant="h6" sx={{ textAlign: { xs: "center", md: "left" }, mt: 1 }}>
             Interested in collaborating? Drop me a message!
           </Typography>
           <Box
