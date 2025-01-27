@@ -9,6 +9,7 @@ import icons from "../../icons.json";
 import Image from "next/image";
 import theme from "../theme";
 import { Divider } from "@mui/material";
+ 
 
 const style = {
   position: "absolute",
@@ -127,7 +128,7 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
   align="justify"
   sx={{ mb: 1 }}
 >
-I am 44 years old, a proud wife, and the mother of two wonderful children. 
+I am 44 years old, the proud wife, and the mother of two wonderful children. 
 </Typography>
 <Divider sx={{ my: 1 }} />
 
@@ -139,7 +140,7 @@ I am 44 years old, a proud wife, and the mother of two wonderful children.
           <Typography variant="h6" gutterBottom>
             • Music and singing have always been my passion — once, I  dreamed of being a singer.
           </Typography>
-          <Box sx={{  display: "flex", justifyContent: "center", mt: 1 }}>
+          <Box sx={{  display: "flex", justifyContent: "center", mt: 1,  }}>
           <audio controls>
   <source src="/LiftMeUp.mp3" type="audio/mp3" />
   Your browser does not support the audio element.
@@ -154,7 +155,7 @@ I am 44 years old, a proud wife, and the mother of two wonderful children.
         </Box>
 
 <Typography
-  variant="body1"
+  variant="h6"
   align="justify"
   sx={{ mb: 1 }}
 >

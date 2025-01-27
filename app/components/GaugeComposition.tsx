@@ -50,8 +50,8 @@ const GaugeComposition: React.FC<GaugeCompositionProps>=({value, label}) =>{
       sx={{
         // Add shadow to the entire container
         filter: 'drop-shadow(0px 3px 5px rgba(0, 255, 204, 0.3))',
-        width: { xs: 150, sm: 180, md: 200 },
-        height: { xs: 150, sm: 180, md: 200 },
+        width: { xs: 80, sm: 150, md: 200 },
+        height: { xs: 80, sm: 150, md: 200 },
         margin: "auto",
         display: 'flex',
         justifyContent: 'center',

@@ -74,7 +74,7 @@ function About() {
             the IT field, ready to apply my skills and continue learning
           </Typography>
           <Stack
-            direction={{ xs: "column", md: "row" }}
+            direction={{ xs: "row", md: "row" }}
             spacing={{ xs: 1, md: 3 }}
             sx={{  alignItems: 'center' }}
           >
