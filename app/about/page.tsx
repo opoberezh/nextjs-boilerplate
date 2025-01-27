@@ -1,12 +1,49 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-
+import icons from "../../icons.json";
 import BasicButton from "../components/BasicButton";
 import ModalCard from "../components/ModalCard";
 import { Box, Container, Typography } from "@mui/material";
 import { Stack } from "@mui/material";
 import GaugeComposition from "../components/GaugeComposition";
+
+interface Icon {
+  id: string;
+  src: string;
+}
+
+const IconGrid: React.FC<{ icons: Icon[] }> = ({ icons }) => (
+  <Box
+    sx={{
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "space-around",
+      borderRadius: "12px",
+      padding: "0 10px",
+     
+    }}
+  >
+    {icons.map(({ id, src }) => (
+      <Box
+        key={id}
+        sx={{
+          m: 1,
+          textAlign: "center",
+          backgroundColor: "rgba(199, 200, 200, 0.5)",
+          borderRadius: "5px",
+          boxShadow: "0 5px 5px #00ffcc",
+          p: 1,
+        }}
+      >
+        <svg width="32" height="32">
+          <use href={src}></use>
+        </svg>
+      </Box>
+    ))}
+  </Box>
+);
+
 
 function About() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,20 +89,22 @@ function About() {
         sx={{
           display: "flex",
           flexDirection: "column",
-            gap: "24px",
+            gap: "12px",
             textAlign: { xs: "center", md: "left" },
             minWidth: "300px",
             maxWidth: "400px",
           }}>
-          <Typography
-        variant="h2"
+             <Typography variant="h2"
           component="h1"
           sx={{
             fontWeight: "bold",
            
             color: "text.primary",
-          }}
-          >Once upon a story</Typography>
+          }}>
+          Olha Poberezhna
+        </Typography>
+        
+          
           <Typography 
           variant="h4"
           component="p"
@@ -73,6 +112,7 @@ function About() {
             As a junior front-end developer, I am excited to begin my career in
             the IT field, ready to apply my skills and continue learning
           </Typography>
+
           <Stack
             direction={{ xs: "row", md: "row" }}
             spacing={{ xs: 1, md: 3 }}
@@ -82,6 +122,24 @@ function About() {
             <GaugeComposition value={20} label="TypeScript" />
             <GaugeComposition value={50} label="JavaScript" />
           </Stack>
+          {/* Tech Skills */}
+          <Typography variant="h4" component="h3" sx={{ fontWeight: "700",  }}>
+              Tech Skills
+            </Typography>
+            <IconGrid icons={icons} />
+
+            {/* Soft Skills */}
+            <Typography variant="h4" component="h3" sx={{ fontWeight: "700",  }}>
+              Soft Skills
+            </Typography>
+            <Typography variant="h6" component="ul" sx={{ pl: 2, textAlign: "left" }}>
+              <li>Clear and Effective Communication</li>
+              <li>Analytical Thinking</li>
+              <li>Learning New Technologies</li>
+              <li>Prioritization</li>
+              <li>Teamwork and Collaboration</li>
+              <li>Attention to Detail</li>
+            </Typography>
           <Box sx={{
         display: "flex",
         

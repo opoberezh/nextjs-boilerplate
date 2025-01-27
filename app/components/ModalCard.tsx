@@ -9,8 +9,8 @@ import icons from "../../icons.json";
 import Image from "next/image";
 import theme from "../theme";
 import { Divider } from "@mui/material";
- 
-
+// import {Swiper, SwiperSlide} from 'swiper/react';
+// import 'swiper/swiper-bundle.min.css'; 
 const style = {
   position: "absolute",
   top: "50%",
@@ -112,6 +112,15 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
         </Box>
 
         {/* Main Info */}
+        <Typography
+        variant="h2"
+          component="h1"
+          sx={{
+            fontWeight: "bold",
+           
+            color: "text.primary",
+          }}
+          >Once upon a story</Typography>
         <Typography variant="h3" component="h2" align="center">
           Olha Poberezhna
         </Typography>
