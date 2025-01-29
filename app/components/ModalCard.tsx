@@ -5,12 +5,12 @@ import Modal from "@mui/material/Modal";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Button from "@mui/material/Button";
-import icons from "../../icons.json";
+import data from '../../slider-data';
 import Image from "next/image";
 import theme from "../theme";
 import { Divider } from "@mui/material";
-// import {Swiper, SwiperSlide} from 'swiper/react';
-// import 'swiper/swiper-bundle.min.css'; 
+import DemoSlider from "./Achievements";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -30,41 +30,6 @@ interface ModalCardProps {
   open: boolean;
   onClose: () => void;
 }
-
-interface Icon {
-  id: string;
-  src: string;
-}
-
-const IconGrid: React.FC<{ icons: Icon[] }> = ({ icons }) => (
-  <Box
-    sx={{
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-around",
-      borderRadius: "12px",
-      p: 2,
-    }}
-  >
-    {icons.map(({ id, src }) => (
-      <Box
-        key={id}
-        sx={{
-          m: 1,
-          textAlign: "center",
-          backgroundColor: "rgba(199, 200, 200, 0.8)",
-          borderRadius: "5px",
-          boxShadow: "0 5px 5px #00ffcc",
-          p: 1,
-        }}
-      >
-        <svg width="64" height="64">
-          <use href={src}></use>
-        </svg>
-      </Box>
-    ))}
-  </Box>
-);
 
 const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
   const [isExpanded, setExpanded] = useState(false);
@@ -113,90 +78,56 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
 
         {/* Main Info */}
         <Typography
-        variant="h2"
+          variant="h2"
           component="h1"
           sx={{
             fontWeight: "bold",
-           
+            textAlign: "center",
             color: "text.primary",
+            mb: 2,
           }}
-          >Once upon a story</Typography>
-        <Typography variant="h3" component="h2" align="center">
-          Olha Poberezhna
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          sx={{ mb: 3,  }}
         >
-          Front-end Developer
-          
+          Once upon a story
         </Typography>
-        <Typography
-  variant="h6"
-  align="justify"
-  sx={{ mb: 1 }}
->
-I am 44 years old, the proud wife, and the mother of two wonderful children. 
-</Typography>
-<Divider sx={{ my: 1 }} />
 
-        {/* Personal Info */}
-        <Typography variant="h5" gutterBottom>
-          Passions 🌟
+        <Typography variant="h6" align="justify" sx={{ mb: 1 }}>
+          I am 44 years old, the proud wife, and the mother of two wonderful
+          children.
         </Typography>
-        <Box sx={{ pl: 2, mb: 2 }}>
-          <Typography variant="h6" gutterBottom>
-            • Music and singing have always been my passion — once, I  dreamed of being a singer.
-          </Typography>
-          <Box sx={{  display: "flex", justifyContent: "center", mt: 1,  }}>
-          <audio controls>
-  <source src="/LiftMeUp.mp3" type="audio/mp3" />
-  Your browser does not support the audio element.
-</audio>
-          </Box>
-          <Typography variant="h6" gutterBottom sx={{mt:1}}>
-            • I love animals, especially dogs.  I believe they make people better.😇 
-          </Typography>
-          <Typography variant="h6" gutterBottom>
-            • Photography and videography are my creative outlets. 📸
-          </Typography>
-        </Box>
-
-<Typography
-  variant="h6"
-  align="justify"
-  sx={{ mb: 1 }}
->
-  
-   I love challenging myself by exploring new fields, setting goals, and achieving them.
-</Typography>
+        <Typography variant="h6" align="justify" sx={{ mb: 1 }}>
+          I love challenging myself by exploring new fields, setting goals, and
+          achieving them.
+        </Typography>
 
         {/* Expanded Section */}
         {isExpanded && (
           <Box>
-            <Typography variant="h5" sx={{ mb: 2 }}>
-            My goal is to create responsive, user-friendly websites while continuously expanding my expertise in modern web technologies. I aspire to join a dynamic team where I can collaborate, learn, and contribute to the development of exceptional digital products.
-            </Typography>
+            <Divider sx={{ my: 1 }} />
 
-            {/* Tech Skills */}
-            <Typography variant="h4" component="h3" sx={{ fontWeight: "700", mb: 2 }}>
-              Tech Skills
+            {/* Personal Info */}
+            <Typography variant="h5" gutterBottom>
+              Passions 🌟
             </Typography>
-            <IconGrid icons={icons} />
-
-            {/* Soft Skills */}
-            <Typography variant="h4" component="h3" sx={{ fontWeight: "700", mt: 3 }}>
-              Soft Skills
-            </Typography>
-            <Typography variant="h5" component="ul" sx={{ pl: 2 }}>
-              <li>Clear and Effective Communication</li>
-              <li>Analytical Thinking</li>
-              <li>Learning New Technologies</li>
-              <li>Prioritization</li>
-              <li>Teamwork and Collaboration</li>
-              <li>Attention to Detail</li>
-            </Typography>
+            <Box sx={{ mb: 2 }}>
+              <Typography variant="h6" gutterBottom>
+                • Music and singing have always been my passion — once, I
+                dreamed of being a singer.
+              </Typography>
+              <Box sx={{ display: "flex", justifyContent: "center", m: 2 }}>
+                <audio controls>
+                  <source src="/LiftMeUp.mp3" type="audio/mp3" />
+                  Your browser does not support the audio element.
+                </audio>
+              </Box>
+              <Typography variant="h6" gutterBottom sx={{ mt: 1 }}>
+                • I love animals, especially dogs. I believe they make people
+                better.😇
+              </Typography>
+              <Typography variant="h6" gutterBottom>
+                • Photography and videography are my creative outlets. 📸
+              </Typography>
+            </Box>
+            <DemoSlider data={data}/>
           </Box>
         )}
 
@@ -214,6 +145,3 @@ I am 44 years old, the proud wife, and the mother of two wonderful children.
 };
 
 export default ModalCard;
-
-
-
