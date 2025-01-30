@@ -20,8 +20,8 @@ interface DemoSliderProps {
 
 const DemoSlider: React.FC<DemoSliderProps> = ({ data }) => {
   return (
-    <Container sx={{ width: "320px" }}>
-      <Typography variant="h4" align="center" >
+    <Container sx={{ width: "320px", mb: 6 }}>
+      <Typography variant="h3" align="center" sx={{mt: 6,  fontWeight: "bold",}} >
         Achievements 🏆
       </Typography>
       <Box
@@ -49,7 +49,8 @@ const DemoSlider: React.FC<DemoSliderProps> = ({ data }) => {
                 flexDirection: "column",
                 alignItems: "center",
               }}
-            ><Typography
+            >
+              <Typography
             variant="h5"
             sx={{ fontWeight: "bold", textAlign: "center" }}
           >
@@ -61,7 +62,7 @@ const DemoSlider: React.FC<DemoSliderProps> = ({ data }) => {
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                   height: "300px",
-                  width: "100%", // Ensure image covers the full width
+                  width: "100%", 
                   borderRadius: 2,
                   boxShadow: 3,
                   position: "relative",

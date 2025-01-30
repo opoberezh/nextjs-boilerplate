@@ -36,6 +36,11 @@ const sliderData = [
     title: "Baking cakes",
     image: "/assets/ach5.png",
   },
+  {
+    id: 8,
+    title: "Take photos and make videos ",
+    image: "/assets/ach8.png",
+  },
  
 ];
 

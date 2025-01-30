@@ -94,10 +94,7 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
           I am 44 years old, the proud wife, and the mother of two wonderful
           children.
         </Typography>
-        <Typography variant="h6" align="justify" sx={{ mb: 1 }}>
-          I love challenging myself by exploring new fields, setting goals, and
-          achieving them.
-        </Typography>
+        
 
         {/* Expanded Section */}
         {isExpanded && (
@@ -105,7 +102,7 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
             <Divider sx={{ my: 1 }} />
 
             {/* Personal Info */}
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h3" gutterBottom sx={{ fontWeight: "bold",}}>
               Passions 🌟
             </Typography>
             <Box sx={{ mb: 2 }}>
@@ -121,11 +118,23 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
               </Box>
               <Typography variant="h6" gutterBottom sx={{ mt: 1 }}>
                 • I love animals, especially dogs. I believe they make people
-                better.😇
+                better.
               </Typography>
-              <Typography variant="h6" gutterBottom>
-                • Photography and videography are my creative outlets. 📸
-              </Typography>
+              <Box sx={{ display: "flex", justifyContent: "center", m: 2 }}>
+  <Box sx={{ borderRadius: 4, overflow: "hidden" }}> 
+    <Image
+      src="/assets/IMG.jpg"
+      alt="Girl with dog"
+      loading="lazy"
+      width={250}
+      height={300}
+    />
+  </Box>
+</Box>
+<Typography variant="h6" gutterBottom align="justify" sx={{ mb: 1 }}>
+          I love challenging myself by exploring new fields, setting goals, and
+          achieving them.
+        </Typography>  
             </Box>
             <DemoSlider data={data}/>
           </Box>
