@@ -8,6 +8,8 @@ import { useState } from "react";
 import projects from "../../projects.json";
 import Link from "next/link";
 import theme from "../theme";
+import PieActiveArc from "../components/PieProjectStats";
+// import TimeLine from "../components/TimeLine";
 
 const StyledProjectCard = styled(Paper)(() => ({
   backgroundColor: theme.palette.background.paper,
@@ -124,6 +126,7 @@ function Projects() {
           }}>
            Explore my latest projects below. Click on a project to view the code with visiting my GitHub page for more details and additional work
           </Typography>
+          <PieActiveArc/>
 <Box 
 >
 

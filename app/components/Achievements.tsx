@@ -77,8 +77,8 @@ const DemoSlider: React.FC<DemoSliderProps> = ({ data }) => {
       <style jsx global>{`
         .swiper-button-prev,
         .swiper-button-next {
-          color: #00ffcc;
-          background: rgba(0, 0, 0, 0.5);
+          color: transparent;
+         
           padding: 10px;
           border-radius: 50%;
           width: 40px;
@@ -88,6 +88,7 @@ const DemoSlider: React.FC<DemoSliderProps> = ({ data }) => {
 
         .swiper-button-prev:hover,
         .swiper-button-next:hover {
+        color: #00ffcc;
           background: rgba(0, 255, 204, 0.3);
         }
 

@@ -2233,6 +2233,15 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
+framer-motion@^12.0.6:
+  version "12.0.6"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.0.6.tgz#4ec8b9225ead4d0d7d4ff00ade6e76a83e6d0c99"
+  integrity sha512-LmrXbXF6Vv5WCNmb+O/zn891VPZrH7XbsZgRLBROw6kFiP+iTK49gxTv2Ur3F0Tbw6+sy9BVtSqnWfMUpH+6nA==
+  dependencies:
+    motion-dom "^12.0.0"
+    motion-utils "^12.0.0"
+    tslib "^2.4.0"
+
 fs-extra@^11.1.1:
   version "11.2.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.2.0.tgz#e70e17dfad64232287d01929399e0ea7c86b0e5b"
@@ -3077,6 +3086,18 @@ mixin-deep@^1.2.0:
   dependencies:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
+
+motion-dom@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.0.0.tgz#7045c63642eecbcc04c40b4457ebb07b3c2b3d0c"
+  integrity sha512-CvYd15OeIR6kHgMdonCc1ihsaUG4MYh/wrkz8gZ3hBX/uamyZCXN9S9qJoYF03GqfTt7thTV/dxnHYX4+55vDg==
+  dependencies:
+    motion-utils "^12.0.0"
+
+motion-utils@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-12.0.0.tgz#fabf79f4f1c818720a1b70f615e2a1768f396ac0"
+  integrity sha512-MNFiBKbbqnmvOjkPyOKgHUp3Q6oiokLkI1bEwm5QA28cxMZrv0CbbBGDNmhF6DIXsi1pCQBSs0dX8xjeER1tmA==
 
 ms@2.0.0:
   version "2.0.0"
