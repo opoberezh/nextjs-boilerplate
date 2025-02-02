@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Pagination, Stack, Typography, Paper, Container, useMediaQuery} from "@mui/material";
+import { Box, Pagination, Stack, Typography, Paper, Container} from "@mui/material";
 import Grid from "@mui/material/Grid2"; 
 import { styled } from "@mui/system";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import projects from "../../projects.json";
 import Link from "next/link";
 import theme from "../theme";
 import PieActiveArc from "../components/PieProjectStats";
-// import TimeLine from "../components/TimeLine";
+
 
 const StyledProjectCard = styled(Paper)(() => ({
   backgroundColor: theme.palette.background.paper,
@@ -50,9 +50,9 @@ const ProjectImage = styled(Box)({
 });
 
 function Projects() {
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+ 
   const [page, setPage] = useState(1);
-  const projectsPerPage = isDesktop ? 1 : 2;
+  const projectsPerPage =  1 ;
 
   const indexOfLastProject = page * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
