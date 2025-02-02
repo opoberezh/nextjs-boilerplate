@@ -1,44 +1,65 @@
 import * as React from 'react';
-import { PieChart, pieArcLabelClasses } from '@mui/x-charts/PieChart';
+import { PieChart } from '@mui/x-charts/PieChart';
 import { techUsage, valueFormatter } from '../../webUsageStats';
+import { Box, Typography } from '@mui/material';
 
 const pieParams = {
   height: 150,
   margin: { right: 5 },
-  slotProps: { legend: { hidden: true } },
-  
+  slotProps: {
+    legend: { hidden: false },
+  },
 };
+
 export default function PieActiveArc() {
   return (
-    <PieChart
-      series={[
-        {
-          data: techUsage,
-          highlightScope: { fade: 'global', highlight: 'item' },
-          faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
-          
-          arcLabel: (item) => ` ${item.value}%`,
-          arcLabelMinAngle: 35,
-          arcLabelRadius: '60%',
-          valueFormatter,
-        },
-      ]}
+    <Box
       sx={{
-        [`& .${pieArcLabelClasses.root}`]: {
-          fontWeight: 'bold',
-        },
-      }} 
-      {...pieParams}
-      {...size}
+        display: 'flex',
+        flexDirection:  'column', 
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+       margin: 'auto',
+        p: '0 10px',
+      }}
+    >
+       <Typography variant="h4" sx={{ fontWeight: '700' }}>
+          Technology Usage
+        </Typography>
+     
+      <PieChart 
+          series={[
+            {
+              data: techUsage,
+              innerRadius: 30,
+              outerRadius: 100,
+              paddingAngle: 5,
+              cornerRadius: 5,
+              startAngle: -45,
+              endAngle: 225,
+              cx: 70,
+              cy: 150,
+              arcLabel: (item) => `${item.value}%`,
+              arcLabelMinAngle: 10,
+              arcLabelRadius: '50%',
+              valueFormatter,
+            },
+          ]}
+          {...pieParams}
+          {...size}
+        />
+     
+     
        
-         
-          
-       
-    
-    />
+
+     
+    </Box>
   );
 }
+
 const size = {
-  width: 400,
-  height: 200,
+  width: 300,
+  height: 300,
 };
+
