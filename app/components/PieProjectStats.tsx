@@ -13,22 +13,14 @@ const pieParams = {
 
 export default function PieActiveArc() {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection:  'column', 
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-       margin: 'auto',
-        p: '0 10px',
-      }}
-    >
-       <Typography variant="h4" sx={{ fontWeight: '700' }}>
-          Technology Usage
-        </Typography>
-     
-      <PieChart 
+    <Box sx={styles.container}>
+      <Typography variant="h4" sx={{ fontWeight: '700' }}>
+        Technology Usage
+      </Typography>
+
+      <Box sx={{ position: 'relative', width: size.width, height: size.height }}>
+        <PieChart
+          sx={{ position: 'relative' }}
           series={[
             {
               data: techUsage,
@@ -38,7 +30,7 @@ export default function PieActiveArc() {
               cornerRadius: 5,
               startAngle: -45,
               endAngle: 225,
-              cx: 70,
+              cx: 80, 
               cy: 150,
               arcLabel: (item) => `${item.value}%`,
               arcLabelMinAngle: 10,
@@ -49,11 +41,10 @@ export default function PieActiveArc() {
           {...pieParams}
           {...size}
         />
-     
-     
-       
 
-     
+       
+        <Typography sx={styles.centerText}>100%</Typography>
+      </Box>
     </Box>
   );
 }
@@ -63,3 +54,22 @@ const size = {
   height: 300,
 };
 
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    margin: 'auto',
+    padding: '0 10px',
+  },
+  centerText: {
+    position: 'absolute',
+    top: '52%',
+    left: '25%',
+    transform: 'translate(-50%, -50%)',
+    fontSize: '22px',
+    fontWeight: 'bold',
+  },
+};
