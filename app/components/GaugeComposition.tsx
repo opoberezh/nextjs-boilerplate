@@ -33,7 +33,7 @@ function GaugePointer() {
 
   return (
     <g>
-      {/* Анімоване коло (центр стрілки) */}
+      
       <MotionCircle 
         cx={cx} 
         cy={cy} 
@@ -43,7 +43,7 @@ function GaugePointer() {
         transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }} 
       />
       
-      {/* Анімована стрілка з плавним рухом */}
+     
       <MotionPath
         d={`M ${cx} ${cy} L ${target.x} ${target.y}`}
         stroke="red"

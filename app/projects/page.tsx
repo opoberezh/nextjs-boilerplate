@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Pagination, Stack, Typography, Paper, Container} from "@mui/material";
+import { Box, Pagination, Stack, Typography, Paper, Container, IconButton} from "@mui/material";
 import Grid from "@mui/material/Grid2"; 
 import { styled } from "@mui/system";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import projects from "../../projects.json";
 import Link from "next/link";
 import theme from "../theme";
 import PieActiveArc from "../components/PieProjectStats";
+import AdsClickIcon from '@mui/icons-material/AdsClick';
 
 
 const StyledProjectCard = styled(Paper)(() => ({
@@ -47,6 +48,20 @@ const ProjectImage = styled(Box)({
   opacity: 0,
   transition: "opacity 0.3s ease-in-out",
   m: 0,
+});
+
+const CornerBadge = styled(Box)({
+  position: "absolute",
+  top: 10,
+  right: 10,
+  backgroundColor: theme.palette.secondary.light,
+  borderRadius: "50%",
+  padding: "5px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  cursor: "pointer",
+  zIndex: 10,
 });
 
 function Projects() {
@@ -102,9 +117,11 @@ function Projects() {
         </Box>
         <Box
           sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
             textAlign: { xs: "center", md: "left" },
-            minWidth: "300px",
-            maxWidth: "400px",
+            maxWidth: '471px'
           }}
         >
           <Typography
@@ -112,7 +129,7 @@ function Projects() {
             component="h1"
             sx={{
               fontWeight: "bold",
-              mb: 1,
+             
               color: "text.primary",
             }}
           >
@@ -120,12 +137,8 @@ function Projects() {
           </Typography>
           <Typography variant="h4"
           component="p"
-          sx={{
-            mb: 3,
-           
-           
-          }}>
-           Explore my latest projects below. Click on a project to view the code with visiting my GitHub page for more details and additional work
+          >
+           Explore my latest projects below. Click on a project to view the code with visiting my GitHub page
           </Typography>
           <PieActiveArc/>
 <Box 
@@ -166,7 +179,11 @@ function Projects() {
 <Typography variant="h6" sx={{mt: 2}}>{description}</Typography>
 <Typography variant="h6" fontStyle="italic" fontWeight={700}sx={{mt: 2}}>{type}</Typography>
 <Typography variant="h6" sx={{mt: 2}}>{role}</Typography>
-
+<CornerBadge>
+<IconButton size="small" >
+                          <AdsClickIcon />
+                        </IconButton>
+</CornerBadge>
                 </Link>
               </StyledProjectCard>
             </Grid>
