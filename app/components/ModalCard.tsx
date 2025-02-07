@@ -139,7 +139,17 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
             <DemoSlider data={data}/>
           </Box>
         )}
-
+ <Typography variant="h4" component="h3" sx={{ fontWeight: "700",  }}>
+              Soft Skills 🧩
+            </Typography>
+            <Typography variant="h6" component="ul" sx={{ pl: 2, textAlign: "left" }}>
+              <li>Clear and Effective Communication</li>
+              <li>Analytical Thinking</li>
+              <li>Learning New Technologies</li>
+              <li>Prioritization</li>
+              <li>Teamwork and Collaboration</li>
+              <li>Attention to Detail</li>
+            </Typography>
         {/* Toggle Button */}
         <Button
           size="small"

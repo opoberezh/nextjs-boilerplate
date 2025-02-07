@@ -2,6 +2,7 @@ import * as React from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
 import { techUsage, valueFormatter } from '../../webUsageStats';
 import { Box, Typography } from '@mui/material';
+import { motion } from "framer-motion";
 
 const pieParams = {
   height: 150,
@@ -43,7 +44,12 @@ export default function PieActiveArc() {
         />
 
        
-        <Typography sx={styles.centerText}>100%</Typography>
+<motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
+          <Typography sx={styles.centerText}>100%</Typography>
+        </motion.div>
       </Box>
     </Box>
   );

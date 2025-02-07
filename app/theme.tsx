@@ -1,5 +1,17 @@
 import  {createTheme}  from "@mui/material";
 
+declare module "@mui/material/styles" {
+  interface Palette {
+    customColors: {
+      iconColors: string[];
+    };
+  }
+  interface PaletteOptions {
+    customColors?: {
+      iconColors: string[];
+    };
+  }
+}
 
 const theme = createTheme({
   palette: {
@@ -14,7 +26,9 @@ const theme = createTheme({
       secondary: "#0f0f0f",
       
     },
-  
+    customColors: {
+      iconColors: ["#04b3af", "#40c4ff", "#e040fb", "#aa00ff", "#304ffe", "#64ffda"], 
+    },
   },
  
   typography: {

@@ -5,11 +5,14 @@ import { GitHub, LinkedIn, Telegram } from "@mui/icons-material";
 import BasicButton from "./components/BasicButton";
 import { useState } from "react";
 import ModalForm from "./components/ModalForm";
-import { Box, Container, Typography, Chip } from "@mui/material";
-
+import { Box, Container, Typography, Chip, useTheme } from "@mui/material";
+import {motion} from "framer-motion";
 import WorldClocks from "./components/Watches";
 
 export default function Home() {
+  const theme = useTheme();
+  const colors = theme.palette.customColors.iconColors; 
+ 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => setIsOpen(true);
@@ -62,6 +65,7 @@ export default function Home() {
             textAlign: { xs: "center", md: "left" },
           }}
         >
+          
           <Typography
             variant="h2"
             component="h1"
@@ -73,35 +77,44 @@ export default function Home() {
           >
             Front-end Developer
           </Typography>
-          <Typography variant="h3" component="p" >
-            Olha Poberezhna
-          </Typography>
+         
+          <Typography variant="h4" component="p" sx={{ fontStyle: "italic", fontWeight: 700, }}>
+          Olha Poberezhna
+    </Typography>
           <Typography variant="h4">
             Passionate about building interactive and user-friendly web
             applications.
           </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: { xs: "center", md: "flex-start" },
-              gap: 2,
-              flexWrap: "wrap",
-              
-            }}
-          >
-            {["React", "TypeScript", "JavaScript", "HTML5", "CSS3"].map(
-              (skill) => (
-                <Chip
-                  key={skill}
-                  label={skill}
-                  variant="outlined"
-                  color="primary"
-                />
-              )
-            )}
+         <Box
+  sx={{
+    display: "flex",
+    justifyContent: { xs: "center", md: "flex-start" },
+    gap: 2,
+    flexWrap: "wrap",
+  }}
+>
+  {["React", "TypeScript", "JavaScript", "HTML5", "CSS3"].map(
+    (skill, index) => (
+      <motion.div
+        key={skill}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.1, duration: 0.5 }}
+      >
+        <Chip
+          label={skill}
+          variant="outlined"
+          sx={{
+            color: colors[index % colors.length],
+            borderColor: colors[index % colors.length],
+            fontWeight: 600,
+          }}
+        />
+      </motion.div>
+    )
+  )}
+</Box>
 
-
-          </Box>
 <Box sx={{
               display: "flex",
               justifyContent: { xs: "center", md: "flex-start" },}}>

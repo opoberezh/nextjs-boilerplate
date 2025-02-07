@@ -6,35 +6,39 @@
 export const techUsage = [
   {
     label: 'HTML',
-    value: 25, // Використовується у всіх проєктах
+    value: 25, 
   },
   {
     label: 'CSS',
-    value: 20, // У більшості випадків
+    value: 20, 
   },
   {
     label: 'JS',
-    value: 18, // Використовується у фронтенді та бекенді
+    value: 18, 
   },
   {
     label: 'React',
-    value: 15, // Використовується у фронтенді
+    value: 15, 
   },
   {
     label: 'TS',
-    value: 1, // Використовується лише у частині проєктів
+    value: 1, 
   },
   {
     label: 'Redux',
-    value: 8, // Не у всіх, залежить від складності стану
+    value: 8, 
   },
   {
     label: 'Node.js',
-    value: 1, // Використовується у бекенді
+    value: 1, 
   },
   {
     label: 'DB',
-    value: 12, // Тільки в проєктах із бекендом
+    value: 10, 
+  },
+  {
+  label: 'AXIOS',
+    value: 2, 
   },
 ];
 

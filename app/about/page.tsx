@@ -5,44 +5,66 @@ import icons from "../../icons.json";
 import BasicButton from "../components/BasicButton";
 import ModalCard from "../components/ModalCard";
 import { Box, Container, Typography } from "@mui/material";
+import {motion} from 'framer-motion';
 import { Stack } from "@mui/material";
 import GaugeComposition from "../components/GaugeComposition";
+import { useTheme } from "@mui/material/styles";
 
 interface Icon {
   id: string;
   src: string;
 }
 
-const IconGrid: React.FC<{ icons: Icon[] }> = ({ icons }) => (
-  <Box
-    sx={{
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-around",
-      borderRadius: "12px",
-      padding: "0 10px",
-     
-    }}
-  >
-    {icons.map(({ id, src }) => (
-      <Box
-        key={id}
-        sx={{
-          m: 1,
-          textAlign: "center",
-          backgroundColor: "rgba(199, 200, 200, 0.5)",
-          borderRadius: "5px",
-          boxShadow: "0 5px 5px #00ffcc",
-          p: 1,
-        }}
-      >
-        <svg width="32" height="32">
-          <use href={src}></use>
-        </svg>
-      </Box>
-    ))}
-  </Box>
-);
+
+
+const IconGrid: React.FC<{ icons: Icon[] }> = ({ icons }) => {
+  const theme = useTheme();
+  const colors = theme.palette.customColors.iconColors; 
+
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-around",
+        borderRadius: "12px",
+       mb: 1,
+       maxWidth: '471px'
+      }}
+    >
+      {icons.map(({ id, src }, index) => (
+       
+          <motion.div
+           key={id}
+           initial={{ opacity: 0, y: -10 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ delay: index * 0.1, duration: 0.5 }}
+          >
+             <Box
+          key={id}
+          sx={{
+            m: 1,
+            textAlign: "center",
+            backgroundColor: "rgba(227, 228, 229, 0.5)",
+            borderRadius: "5px",
+            boxShadow: `0 5px 10px ${colors[index % colors.length]}`, 
+            p: 0.5,
+          }}
+        >
+             <svg width="32" height="32" style={{ filter: "drop-shadow(1px 1px 2px rgba(255,255,255,1))" }}>
+            <use href={src}></use>
+          </svg>
+          </Box>
+          </motion.div>
+         
+      
+      ))}
+    </Box>
+  );
+};
+
+
+
 
 
 function About() {
@@ -52,29 +74,33 @@ function About() {
   const handleClose = () => setIsOpen(false);
 
   return (
-    <Box component="main" 
+    <Box
+    component="main"
     sx={{
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-     
       bgcolor: "background.default",
-      p: { xs: 2, sm: 4 },
-    }}
-    >
+      p: 3,
+    }}> 
       <Container
-      sx={{
-        display: "flex",
-        flexDirection: { xs: "column", md: "row" },
-        alignItems: "center",
-        justifyContent: "center",
-        gap:{xs: 4, md: 10},
-       
-      }}
+     
+     sx={{
+      display: "flex",
+      flexDirection: { xs: "column", md: "row" },
+      alignItems: "center",
+      justifyContent: "center",
+      gap: { xs: 4, md: 10 },
+    }}
       >
-        <Box sx={{ backgroundColor: "rgba(227, 228, 229, 0.5)", borderRadius: "50%", 
-          boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)", maxWidth: "450px" }}>
+        <Box   
+        sx={{
+            backgroundColor: "rgba(227, 228, 229, 0.5)",
+            borderRadius: "50%",
+            maxWidth: "450px",
+            boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)",
+          }}>
           <Image
             src="/assets/pana.png"
             alt="Woman is typing on a laptop"
@@ -89,11 +115,10 @@ function About() {
         sx={{
           display: "flex",
           flexDirection: "column",
-            gap: "12px",
-            textAlign: { xs: "center", md: "left" },
-            minWidth: "300px",
-            maxWidth: "400px",
-          }}>
+          gap: "12px",
+          textAlign: { xs: "center", md: "left" },
+          maxWidth: '471px'
+        }}>
              <Typography variant="h2"
           component="h1"
           sx={{
@@ -122,24 +147,14 @@ function About() {
             <GaugeComposition value={20} label="TypeScript" />
             <GaugeComposition value={50} label="JavaScript" />
           </Stack>
-          {/* Tech Skills */}
-          <Typography variant="h4" component="h3" sx={{ fontWeight: "700",  }}>
+         
+          <Typography variant="h4" component="h3" sx={{ fontWeight: "700", mt:2 }}>
               Tech Skills
             </Typography>
             <IconGrid icons={icons} />
 
-            {/* Soft Skills */}
-            <Typography variant="h4" component="h3" sx={{ fontWeight: "700",  }}>
-              Soft Skills
-            </Typography>
-            <Typography variant="h6" component="ul" sx={{ pl: 2, textAlign: "left" }}>
-              <li>Clear and Effective Communication</li>
-              <li>Analytical Thinking</li>
-              <li>Learning New Technologies</li>
-              <li>Prioritization</li>
-              <li>Teamwork and Collaboration</li>
-              <li>Attention to Detail</li>
-            </Typography>
+      
+           
           <Box sx={{
         display: "flex",
         
@@ -153,7 +168,7 @@ function About() {
        
       </Container>
       {isOpen && <ModalCard open={isOpen} onClose={handleClose} />}
-    </Box>
+      </Box>
   );
 }
 

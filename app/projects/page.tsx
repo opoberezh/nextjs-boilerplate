@@ -64,30 +64,31 @@ function Projects() {
 
   return (
     <Box
-      component="main"
+    component="main"
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+
+      bgcolor: "background.default",
+      p: 3,
+    }}> 
+      <Container
+      
       sx={{
         display: "flex",
-        flexDirection: "column",
+        flexDirection: { xs: "column", md: "row" },
         alignItems: "center",
         justifyContent: "center",
-        bgcolor: "background.default",
-        p: 3,
-      }}
-    >
-      <Container
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          alignItems: "center",
-          justifyContent: "center",
-          gap: { xs: 4, md: 10 },
-        }}>
+        gap: { xs: 4, md: 10 },
+      }}>
       <Box
           sx={{
             backgroundColor: "rgba(227, 228, 229, 0.5)",
             borderRadius: "50%",
             boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)",
-            maxWidth: "592px",
+            maxWidth: "450px",
           }}
         >
           <Image
@@ -184,7 +185,7 @@ function Projects() {
         </Stack>
         </Box>
       </Container>
-    </Box>
+   </Box>
   );
 }
 
