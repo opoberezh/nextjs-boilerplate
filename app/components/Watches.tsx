@@ -16,13 +16,13 @@ const WorldClocks = () => {
     <Box
       sx={{
        mb:4,
-        p: 2,
+        py: 2,
         textAlign: "center",
         
       }}
     >
       
-      <Grid container spacing={3} justifyContent="center">
+      <Grid container spacing={{xs: 3, md: 8}} justifyContent="center">
         {timeZones.map(({ label, timeZone }) => (
           <Grid key={label}
           sx={{

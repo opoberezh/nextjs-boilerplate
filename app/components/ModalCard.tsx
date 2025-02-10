@@ -61,9 +61,9 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
         <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
           <Box
             sx={{
-              borderRadius: "50%",
-              backgroundColor: "#263238",
-              boxShadow: "0 0 50px #00ffcc",
+              borderRadius: "24px",
+             
+              boxShadow: "0 0 20px #00ffcc",
             }}
           >
             <Image

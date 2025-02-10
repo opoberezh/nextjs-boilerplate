@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Pagination, Stack, Typography, Paper, Container, IconButton} from "@mui/material";
+import { Box, Pagination, Stack, Typography, Paper, Container, IconButton, useMediaQuery} from "@mui/material";
 import Grid from "@mui/material/Grid2"; 
 import { styled } from "@mui/system";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import { useState } from "react";
 import projects from "../../projects.json";
 import Link from "next/link";
 import theme from "../theme";
-import PieActiveArc from "../components/PieProjectStats";
+import PieActiveArc from "../components/PieActiveArc";
 import AdsClickIcon from '@mui/icons-material/AdsClick';
 
 
@@ -32,6 +32,12 @@ const StyledProjectCard = styled(Paper)(() => ({
   },
   "&:hover .project-image": {
     opacity: 1,
+  
+  },
+  [theme.breakpoints.up("lg")]: {
+    width: "250px", 
+    height: "250px", 
+    padding: theme.spacing(1), 
   },
 }));
 
@@ -52,8 +58,8 @@ const ProjectImage = styled(Box)({
 
 const CornerBadge = styled(Box)({
   position: "absolute",
-  top: 10,
-  right: 10,
+  bottom: 5,
+  right: 5,
   backgroundColor: theme.palette.secondary.light,
   borderRadius: "50%",
   padding: "5px",
@@ -65,9 +71,9 @@ const CornerBadge = styled(Box)({
 });
 
 function Projects() {
- 
+  const isDesktop = useMediaQuery(theme.breakpoints.up("lg"))
   const [page, setPage] = useState(1);
-  const projectsPerPage =  1 ;
+  const projectsPerPage = isDesktop ? 2 : 1;
 
   const indexOfLastProject = page * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
@@ -78,17 +84,7 @@ function Projects() {
   };
 
   return (
-    <Box
-    component="main"
-    sx={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-
-      bgcolor: "background.default",
-      p: 3,
-    }}> 
+    
       <Container
       
       sx={{
@@ -96,33 +92,35 @@ function Projects() {
         flexDirection: { xs: "column", md: "row" },
         alignItems: "center",
         justifyContent: "center",
-        gap: { xs: 4, md: 10 },
-      }}>
+        gap: { xs: 4, md: 13 },
+        py: 3,
+      }}
+      >
       <Box
           sx={{
-            backgroundColor: "rgba(227, 228, 229, 0.5)",
-            borderRadius: "50%",
+            borderRadius: "40px",
+            width: "100%",
+            maxWidth: "500px",
             boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)",
-            maxWidth: "450px",
           }}
         >
           <Image
-            src="/assets/bro.png"
-            alt="Astronaut explores object"
-            width={450}
-            height={450}
+            src="/assets/coding.png"
+            alt="Coding apps"
+            width={500}
+            height={500}
             priority={true}
             className="responsiveImage"
+            style={{ objectFit: "cover" }} 
           />
         </Box>
         <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px",
-            textAlign: { xs: "center", md: "left" },
-            maxWidth: '471px'
-          }}
+         sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "12px",
+          textAlign: { xs: "center", md: "left" },
+        }}
         >
           <Typography
             variant="h2"
@@ -202,7 +200,7 @@ function Projects() {
         </Stack>
         </Box>
       </Container>
-   </Box>
+  
   );
 }
 

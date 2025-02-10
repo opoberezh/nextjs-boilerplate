@@ -19,43 +19,35 @@ export default function Home() {
   const handleClose = () => setIsOpen(false);
 
   return (
-    <Box
-      component="main"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-
-        bgcolor: "background.default",
-        p: 3,
-      }}
-    >
+   
       <Container
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "center",
-          gap: { xs: 4, md: 10 },
+          gap: { xs: 4, md: 13 },
+          py: 3,
         }}
       >
         <Box
           sx={{
-            backgroundColor: "rgba(227, 228, 229, 0.5)",
-            borderRadius: "50%",
-            maxWidth: "450px",
+           
+            borderRadius: "40px",
+            maxWidth: "500px",
             boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)",
           }}
         >
           <Image
             className="responsiveImage"
-            src="/assets/innovation.png"
-            alt="Innovating image"
-            width={450}
-            height={450}
+            src="/assets/design.png"
+            alt="Interaction design"
+            width={500}
+            height={500}
             priority={true}
-          />
+            style={{  objectFit: "cover" }} 
+/>
+         
         </Box>
         <Box
           sx={{
@@ -78,7 +70,7 @@ export default function Home() {
             Front-end Developer
           </Typography>
          
-          <Typography variant="h4" component="p" sx={{ fontStyle: "italic", fontWeight: 700, }}>
+          <Typography variant="h4" component="p" sx={{  fontWeight: 700, }}>
           Olha Poberezhna
     </Typography>
           <Typography variant="h4">
@@ -127,7 +119,7 @@ export default function Home() {
           <Box
             sx={{
               display: "flex",
-              gap: 2,
+              gap: {xs: 8, md: 13},
              
               justifyContent: { xs: "center", md: "flex-start" },
             }}
@@ -165,8 +157,11 @@ export default function Home() {
             <BasicButton text="Write Letter" onClick={handleOpen} />
           </Box>
         </Box>
+        {isOpen && <ModalForm open={isOpen} onClose={handleClose} />}
       </Container>
-      {isOpen && <ModalForm open={isOpen} onClose={handleClose} />}
-    </Box>
+    
+   
   );
 }
+
+
