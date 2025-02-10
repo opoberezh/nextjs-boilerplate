@@ -35,6 +35,7 @@ function About() {
           width: "100%",
           maxWidth: "500px",
           boxShadow: "0 0 30px rgba(0, 255, 204, 0.8)",
+          
         }}
       >
         <Image
@@ -72,10 +73,10 @@ function About() {
           As a junior front-end developer, I am excited to begin my career in
           the IT field, ready to apply my skills and continue learning
         </Typography>
-        <Box sx={{ width: { xs: "100%", md: "400px" } }}>
+        <Box sx={{ display: "flex", alignItems: "center",  justifyContent: { xs: "center", md: "flex-start" }, width: "100%", maxWidth: "450px" , margin: "0 auto"}}>
           <Stack
             direction={{ xs: "row", md: "row" }}
-            sx={{ alignItems: "center" }}
+           
           >
             <GaugeComposition value={35} label="React" />
             <GaugeComposition value={10} label="TypeScript" />

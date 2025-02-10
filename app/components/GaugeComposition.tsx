@@ -49,8 +49,8 @@ const GaugeComposition: React.FC<GaugeCompositionProps> = ({ value, label }) => 
       value={value}
       sx={{
         filter: "drop-shadow(0px 3px 5px rgba(0, 255, 204, 0.3))",
-        width: { xs: 100, sm: 150, md: 200 },
-        height: { xs: 100, sm: 150, md: 150 },
+        width: { xs: 100, sm: 130, md: 140 },
+        height: { xs: 100, sm: 130, md: 140 },
         margin: "auto",
         display: "flex",
         justifyContent: "center",
