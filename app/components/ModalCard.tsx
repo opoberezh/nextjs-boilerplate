@@ -91,7 +91,7 @@ const ModalCard: React.FC<ModalCardProps> = ({ open, onClose }) => {
         </Typography>
 
         <Typography variant="h6" align="justify" sx={{ mb: 1 }}>
-          I am 44 years old, the proud wife, and the mother of two wonderful
+          I am 44 years old, a proud wife, and a mother of two wonderful
           children.
         </Typography>
         
